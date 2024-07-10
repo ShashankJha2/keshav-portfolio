@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #6A2C3E, #CF4520); /* Gradient background */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #451D28; /* Navbar background color */
+            padding: 10px;
+            width: 100%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Navbar shadow */
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease; /* Smooth hover transition */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar a.active {
+            background-color: #5D2736;
+            color: white;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack services vertically */
+            align-items: center;
+            gap: 20px; /* Spacing between services */
+            max-width: 1000px; /* Limit maximum width */
+            margin: 0 auto; /* Center align content */
+        }
+        .service {
+            background-color: #451D28; /* Service background color */
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Add some shadow */
+            color: white; /* Text color */
+            text-align: center; /* Center text */
+            max-width: 80%; /* Limit maximum width */
+            margin-bottom: 20px; /* Add spacing between services */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow to contain rounded corners */
+            margin-top: 10px; /* Adjust top margin to match bottom margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service h2 {
+            font-size: 2em; /* Heading font size */
+            margin: 0;
+            color: #FFD700; /* Golden yellow text color */
+        }
+        .service p {
+            font-size: 1.5em; /* Paragraph font size */
+            margin: 0;
+        }
+        .title {
+            font-size: 4em; /* Title font size */
+            font-weight: bold; /* Bold text */
+            color: #ffffff; /* Golden yellow text color */
+            margin-bottom: 20px; /* Space below title */
+            text-align: center; /* Center align title */
+        }
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar a {
+                margin: 5px 0;
+            }
+            .service {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+            .service h2 {
+                font-size: 1.8em; /* Adjust heading font size */
+            }
+            .service p {
+                font-size: 1.2em; /* Adjust paragraph font size */
+            }
+            .title {
+                font-size: 3em; /* Adjust title font size */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <div class="content">
+        <div class="title">Contact Information</div>
+        <div class="service">
+            <h2>Email</h2>
+            <p>dwivedi.keshav21@gmail.com</p>
+        </div>
+        <div class="service">
+            <h2>Phone</h2>
+            <p>703-206-8950</p>
+        </div>
+    </div>
+
+    <script>
+        // Highlight active link in navbar based on current page
+        document.addEventListener('DOMContentLoaded', function() {
+            var currentPage = window.location.pathname.split('/').pop();
+            var navLinks = document.querySelectorAll('.navbar a');
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
